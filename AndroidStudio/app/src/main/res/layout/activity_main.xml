@@ -20,36 +20,48 @@
         android:id="@+id/buttonWatchRecordedVideo"
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="36dp"
         android:backgroundTint="#16509A"
         android:text="녹화영상 보기"
         app:layout_constraintBottom_toTopOf="@+id/buttonWatchStreaming"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/buttonWatchStreaming"
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="36dp"
         android:backgroundTint="#16509A"
         android:text="스트리밍 보기"
         app:layout_constraintBottom_toTopOf="@+id/buttonWatchRecordEntryGraph"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/buttonWatchRecordEntryGraph"
         android:layout_width="200dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="104dp"
+        android:layout_marginBottom="36dp"
         android:backgroundTint="#16509A"
         android:text="출입기록 그래프 보기"
+        app:layout_constraintBottom_toTopOf="@+id/buttonEditSmsReceiver"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buttonEditSmsReceiver"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="48dp"
+        android:backgroundTint="#16509A"
+        android:text="알람 수신 목록 수정"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
