@@ -1,9 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp">
+
+    <ImageView
+        android:layout_width="180dp"
+        android:layout_height="99dp"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/notification" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:hint="수신자 목록"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/editTextPhoneNumber"
@@ -24,7 +39,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="#16509A"
-        android:text="전화번호 삭제" />
+        android:text="등록 문자 전송" />
 
 
     <ListView
