@@ -83,7 +83,32 @@ public class EditSMSReceiverActivity extends AppCompatActivity {
             }
         });
 
-        // 전화번호 리스트 항목 길게 누를 시 이름 설정 기능 제공
+        // 전화번호 리스트 항목 클릭 시 삭제 여부를 묻는 기능 추가
+        listViewPhoneNumbers.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String phoneNumber = getPhoneNumberFromDisplay(displayList.get(position));
+
+                // 삭제 확인 대화상자 표시
+                new AlertDialog.Builder(EditSMSReceiverActivity.this)
+                        .setTitle("전화번호 삭제")
+                        .setMessage(phoneNumber + " 번호를 삭제하시겠습니까?")
+                        .setPositiveButton("삭제", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                phoneNumberNameMap.remove(phoneNumber);
+                                updateDisplayList();
+                                adapter.notifyDataSetChanged();
+                                savePhoneNumberNameMap(); // 전화번호가 삭제될 때마다 저장
+                                Toast.makeText(EditSMSReceiverActivity.this, "전화번호가 삭제되었습니다.", Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                        .setNegativeButton("취소", null)
+                        .show();
+            }
+        });
+
+        // 전화번호 리스트 항목 길게 누를 시 이름 설정 기능 추가
         listViewPhoneNumbers.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
