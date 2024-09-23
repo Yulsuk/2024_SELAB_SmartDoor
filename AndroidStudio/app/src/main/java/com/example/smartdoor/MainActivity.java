@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         btnWatchRecordedVideo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String url = "http://220.69.240.117/smartdoor/watchRecordedVideos.php";
+                String url = "http://220.69.240.35/smartdoor/watchRecordedVideos.php";
 
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setData(Uri.parse(url));
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         btnWatchStreaming.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String url = "http://220.69.240.117/smartdoor/watchStreaming.php";//수정필요
+                String url = "http://220.69.240.35/smartdoor/watchStreaming.php";//수정필요
 
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setData(Uri.parse(url));
@@ -49,6 +49,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view){
                 Intent intent = new Intent(getApplicationContext(), WatchEntryTimeGraph.class);
+                startActivity(intent);
+            }
+        });
+
+        Button btnEditSmsReceiver = (Button)findViewById(R.id.buttonEditSmsReceiver);
+        btnEditSmsReceiver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, EditSMSReceiverActivity.class);
                 startActivity(intent);
             }
         });
